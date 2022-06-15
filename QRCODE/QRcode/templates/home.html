@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Url short</title>
+</head>
+<style>
+    form {
+     width:800px;
+     height:500px;
+     background-color: gray;
+     display: flex;
+     flex-direction:column;
+     align-items:center;
+     margin:auto;
+     padding:20px 0;
+    }
+    button{
+    margin-top:20px;
+    color: blue;
+    }
+</style>
+<body>
+     <h1 style="text-align:center;">URL SHORTNER</h1>
+       <form  action="" method="post" >
+           {% csrf_token %}
+           <input type="text" name="full_url" />
+           <button type="submit">SUBMIT</button>
+
+           <p>LONG URL:-
+
+               {{full_url}}
+           </p>
+           <p> SHORT URL:-
+               {{short_url}}
+           </p>
+
+       </form>
+
+</html>
